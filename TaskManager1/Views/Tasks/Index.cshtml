@@ -1,26 +1,28 @@
 ﻿@using TaskManager1.Models;
-
 @model IEnumerable<TaskModel>
 
-<h1>Task Dashboard</h1>
-<h2>Current Task</h2>
+<div class="text-center">
 
-<a href="/Tasks/Create" class="btn btn-outline-dark">Create Task</a>
+    <h1>Task Dashboard</h1>
+    <h2>Current Tasks</h2>
 
-
-@foreach (var task in Model)
-{
-    <div>
-    <p></p>
+    <a href="/Tasks/Create" class="btn btn-outline-dark">Create Task</a>
 
 
-    <p>@task.TaskId - @task.Name - @task.Description - @task.DueDate - @task.IsComplete</p>
-    <p></p>
-    <a href="/Tasks/Edit/@(task.TaskId)" class="btn btn-primary">Edit</a>
-    <a href="/Tasks/Delete/@(task.TaskId)" class="btn btn-primary">Delete</a>
+    @foreach (var task in Model)
+    {
+        <div>
+        <p></p>
 
 
-    <p></p>
-    </div>
+        <p>@task.TaskId - @task.Name - @task.Description - @task.DueDate - @task.IsComplete</p>
+        <p></p>
+        <a href="/Tasks/Edit/@(task.TaskId)" class="btn btn-primary">Edit</a>
+        <a href="/Tasks/Delete/@(task.TaskId)" class="btn btn-primary">Delete</a>
 
-}
+
+        <p></p>
+        </div>
+
+    }
+</div>
