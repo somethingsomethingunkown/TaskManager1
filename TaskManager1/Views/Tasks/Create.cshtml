@@ -3,8 +3,7 @@
 <h1>Create Task</h1>
 
 <form asp-controller="Tasks" asp-action="Create" method="post">
-   
-
+    @Html.AntiForgeryToken()
     <div>
         <label asp-for="SKUs"></label>
         <input asp-for="SKUs" class="form-control" />
@@ -16,8 +15,13 @@
     </div>
 
     <div>
-        <label asp-for="Bin"></label>
-        <input asp-for="Bin" type="checkbox" />
+        <label> asp-for="Bin"></label>
+        <select asp-for="Bin" class="form-select">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+     </select>
     </div>
 
     <button type="submit" class="btn btn-primary">Add Task</button>
