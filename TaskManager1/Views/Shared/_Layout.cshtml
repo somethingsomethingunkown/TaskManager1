@@ -20,20 +20,17 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+            <div class="container-fluid justify-content-center">
 
-                <div class="vstack gap-3">
-                 <div class="p-2">Home</div>
-                 <div class="p-2">Inventory</div>
-                 <div class="p-2">Task Dashboard</div>
-                </div>
-             
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
+             <ul class="navbar-nav fs-3 text-center">
+                                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                  <div class="container mt-4 text-center">
+                        <div class="container mt-4 text-center">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -50,18 +47,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Tasks" asp-action="Index">Task Dashboard</a>
                         </li>
-                        <form class="was-validated">
-                            <div class="mb-3">
-                                <label for="validationTextarea" class="form-label">Manual SKU Entry</label>
-                                <textarea class="form-control" id="validationTextarea" placeholder="Enter SKU manually" ></textarea>
-                                <div class="invalid-feedback">
-                                    Please enter a valid SKU in the textarea.
-                                </div>
-                            </div>
+
                     </ul>
+                  </div>
                     <partial name="_LoginPartial" />
                 </div>
-            </div>
+             </ul>
+
+          </div>
         </nav>
     </header>
     <div class="container">
