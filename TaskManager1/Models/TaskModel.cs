@@ -8,9 +8,9 @@ namespace TaskManager1.Models
         public int TaskId { get; set; }
 
 
-        public string? Name { get; set; }
-        public string? Description { get; set; }
-        public DateTime? DueDate { get; set; }
-        public bool? IsComplete { get; set; }
+        public string? SKUs { get; set; }
+        public string? EmployeeAssigned { get; set; }
+        public string? Bin { get; set; }
+        public bool? Status { get; set; }
     }
 }

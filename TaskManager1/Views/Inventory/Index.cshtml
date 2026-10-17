@@ -1,8 +1,39 @@
 ﻿@using TaskManager1.Models;
-
 @model IEnumerable<TaskModel>
+    
 
-<h1>Inventory</h1>
-<h2>Expected Bin</h2> <h3>Scanned Bin</h3>
 
-<a href="/Tasks/Reconcile" class="btn btn-outline-dark">Reconcile</a>
+
+<div class="container mt-4 text-center">
+
+    <h1 class="mb-3">Warehouse Inventory</h1>
+    <p class="text-white">Master list of stored SKUs and assigned location bins</p>
+
+    <table class="table table-hover table-bordered mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>TaskId</th>
+                <th>SKUs</th>
+                <th>EmployeeAssigned</th>
+                <th>Bin</th>
+                <th>Is Complete?</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model)
+            {
+
+             <tr>
+                <td>@task.TaskId</td>
+                <td>@task.SKUs</td>
+                <td>@task.EmployeeAssigned</td>
+                <td>@task.Bin</td>
+                <td>@task.Status</td>
+
+            </tr>
+
+            }
+
+        </tbody>
+    </table>
+</div>

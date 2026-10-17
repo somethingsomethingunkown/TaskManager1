@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskManager1.Data;
+using TaskManager1.Models;
 
 namespace TaskManager1.Controllers
 {
@@ -12,10 +13,13 @@ namespace TaskManager1.Controllers
             _context = context;
         }
 
+        
+
 
         public IActionResult Index()
         {
-            return View();
+            var tasks = _context.Tasks.ToList();
+            return View(tasks);
         }
     }
 }
