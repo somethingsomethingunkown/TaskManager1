@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using TaskManager1.Data;
 using TaskManager1.Models;
 
@@ -26,13 +27,13 @@ namespace TaskManager1.Controllers
             return View(tasks);
         }
 
-
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-
+        [HttpPost]
         public IActionResult Create(TaskModel task)
         {
             _context.Tasks.Add(task);
@@ -41,5 +42,6 @@ namespace TaskManager1.Controllers
             return RedirectToAction("Index");
         }
 
+       
     }
 }
