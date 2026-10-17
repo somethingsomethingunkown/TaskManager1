@@ -1,0 +1,35 @@
+﻿@model TaskManager1.Models.TaskModel
+
+<h1>Create Task</h1>
+
+<form method="post">
+
+    <div>
+        <label>Name</label>
+        <input type="text" name ="Name"/>
+    </div>
+
+
+
+    <div>
+        <label>Description</label>
+        <input type="text" name ="Description"/>
+    </div>
+
+
+   <div>
+        <label>Due Date</label>
+        <input type="datetime" name ="DueDate"/>
+    </div>
+
+
+
+
+    <div>
+        <label>Is Complete?</label>
+        <input type="checkbox" name ="IsComplete"/>
+    </div>
+
+    <button type="submit">Add Task</button>
+
+</form>
