@@ -2,34 +2,23 @@
 
 <h1>Create Task</h1>
 
-<form method="post">
+<form asp-controller="Tasks" asp-action="Create" method="post">
+   
 
     <div>
-        <label>Name</label>
-        <input type="text" name ="Name"/>
+        <label asp-for="SKUs"></label>
+        <input asp-for="SKUs" class="form-control" />
     </div>
-
-
 
     <div>
-        <label>Description</label>
-        <input type="text" name ="Description"/>
+        <label asp-for="EmployeeAssigned"></label>
+        <input asp-for="EmployeeAssigned" class="form-control" />
     </div>
-
-
-   <div>
-        <label>Due Date</label>
-        <input type="datetime" name ="DueDate"/>
-    </div>
-
-
-
 
     <div>
-        <label>Is Complete?</label>
-        <input type="checkbox" name ="IsComplete"/>
+        <label asp-for="Bin"></label>
+        <input asp-for="Bin" type="checkbox" />
     </div>
 
-    <button type="submit">Add Task</button>
-
+    <button type="submit" class="btn btn-primary">Add Task</button>
 </form>
