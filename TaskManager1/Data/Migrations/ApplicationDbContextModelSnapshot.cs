@@ -226,25 +226,25 @@ namespace TaskManager1.Data.Migrations
 
             modelBuilder.Entity("TaskManager1.Models.TaskModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TaskId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaskId"));
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Bin")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DueDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("EmployeeAssigned")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsComplete")
+                    b.Property<string>("SKUs")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
+                    b.HasKey("TaskId");
 
                     b.ToTable("Task", (string)null);
                 });
