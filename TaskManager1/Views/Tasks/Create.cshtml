@@ -5,7 +5,7 @@
 <form asp-controller="Tasks" asp-action="Create" method="post">
     @Html.AntiForgeryToken()
     <div>
-        <label asp-for="SKUs"></label>
+        <label asp-for="SKUs">SKUs</label>
         <input asp-for="SKUs" class="form-control" />
     </div>
 
@@ -24,5 +24,8 @@
      </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Add Task</button>
+    <div class="vstack gap-2 col-md-5 mx-auto">
+        <button type="button" class="btn btn-secondary">Submit</button>
+        <button type="button" class="btn btn-outline-secondary">Cancel</button>
+    </div>
 </form>
