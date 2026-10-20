@@ -22,34 +22,24 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
             <div class="container-fluid justify-content-center">
 
-             <ul class="navbar-nav fs-3 text-center">
+             <ul class="navbar-nav fs-3" style="display: flex; gap: 2rem; align-items: center;">
                                  <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                   <div class="container mt-4 text-center">
-                        <div class="container mt-4 text-center">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Inventory" asp-action="Index">Inventory</a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Tasks" asp-action="Index">Task Dashboard</a>
-                        </li>
-
+                    <ul class="navbar-nav" style="display: flex; gap: 6rem; align-items: center;">
+                        <li class="nav-item"><a class="nav-link"><a class="text-white" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link"><a class="text-white" href="#">Privacy</a></li>
+                        <li class="nav-item"><a class="nav-link"><a class="text-white" href="#">Inventory</a></li>
+                        <li class="nav-item"><a class="nav-link"><a class="text-white" href="#">Task Dashboard</a></li>
                     </ul>
                   </div>
+
+
                     <partial name="_LoginPartial" />
                 </div>
              </ul>
