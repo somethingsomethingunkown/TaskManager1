@@ -28,6 +28,9 @@ namespace TaskManager1.Controllers
             return View(tasks);
         }
 
+
+
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -35,13 +38,50 @@ namespace TaskManager1.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(TaskModel task)
         {
-            
-            _context.Tasks.Add(task);
-            _context.SaveChanges();
+            if (task != null && ModelState.IsValid)
+            {
 
-            return RedirectToAction("Index");
+                _context.Tasks.Add(task);
+                _context.SaveChanges();
+
+
+                TempData["SuccessMessage"] = "Your task was saved successfully!";
+
+
+                return RedirectToAction("Index");
+            }
+
+            return View(task);
+        }
+
+
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var task = _context.Tasks.Find(id);
+            if (task == null)
+            {
+                return NotFound();
+            }
+
+            return View(task);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(TaskModel task)
+        {
+            if (task != null && ModelState.IsValid)
+            {
+                _context.Tasks.Update(task);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(task);
         }
 
   
@@ -59,6 +99,24 @@ namespace TaskManager1.Controllers
             {
                 _context.Tasks.Remove(task);
                 _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
+
+
+        [HttpPost]
+        public IActionResult CompleteTask(int id)
+        {
+            var task = _context.Tasks.Find(id);
+            if (task != null)
+            {
+                _context.Tasks.Remove(task);
+
+     
+
+                _context.SaveChanges();
+                TempData["SuccessMessage"] = $"Task {id} was marked as complete and removed!";
             }
             return RedirectToAction("Index");
         }
