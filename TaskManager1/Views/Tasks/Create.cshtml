@@ -2,30 +2,45 @@
 
 <h1>Create Task</h1>
 
+
+
+
 <form asp-controller="Tasks" asp-action="Create" method="post">
     @Html.AntiForgeryToken()
+<div class="vstack gap-4 col-md-5 mx-auto">
     <div>
         <label asp-for="SKUs">SKUs</label>
         <input asp-for="SKUs" class="form-control" />
+        <span asp-validation-for="SKUs" class="text-danger"></span>
     </div>
 
     <div>
         <label asp-for="EmployeeAssigned"></label>
         <input asp-for="EmployeeAssigned" class="form-control" />
+        <span asp-validation-for="EmployeeAssigned" class="text-danger"></span>
     </div>
 
     <div>
         <label asp-for="Bin"></label>
         <select asp-for="Bin" class="form-select">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-     </select>
+            <option value="" disabled selected>Choose bin number...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <span asp-validation-for="Bin" class="text-danger"></span>
     </div>
 
-    <div class="vstack gap-2 col-md-5 mx-auto">
+    <div class="form-check mb-3">
+        <label asp-for="Status" class="form-check-label">Needs reconciliation</label>
+        <input asp-for="Status" type="checkbox" class="form-check-input" />
+        
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="vstack gap-4 col-md-5 mx-auto">
         <button type="submit" class="btn btn-secondary">Submit</button>
         <button type="button" class="btn btn-outline-secondary">Cancel</button>
     </div>
+</div>
 </form>
