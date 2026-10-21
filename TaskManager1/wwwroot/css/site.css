@@ -29,3 +29,106 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+:root {
+
+    --green-primary: #198754;
+    --green-100: #d1e7dd;
+    --green-200: #a3cfbb;
+    --green-300: #75b798;
+    --green-400: #479f75;
+    --green-500: #198754; 
+    --green-600: #146c43;
+    --green-700: #0f5132;
+    --green-800: #0a3622;
+    --green-900: #051b11;
+}
+body {
+    background-color: black;
+}
+
+.form-label,
+form label:not(.form-check-label) {
+    color: var(--green-200, #d1e7dd);
+    font-size: 4.2rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-left: 0 !important; 
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    position: static !important; 
+    margin-left: 0 !important;
+    width: 2.0rem;
+    height: 2.0rem;
+    cursor: pointer;
+}
+
+
+.form-check-label {
+    position: static !important;
+    color: var(--green-200, #d1e7dd);
+    font-size: 4.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+::placeholder {
+    color: #a0a0a0 !important;
+    opacity: 1;
+}
+header nav.navbar, .navbar {
+    background-color: var(--green-900) !important;
+    border-bottom: 2px solid var(--green-700);
+}
+
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: var(--green-600) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--green-400) !important;
+}
+
+h1, h2, h3, .text-heading {
+    color: var(--green-100);
+}
+
+
+.btn-secondary {
+    background-color: var(--green-700);
+    border-color: var(--green-600);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: var(--green-800);
+    border-color: var(--green-700);
+ }
+.table-dark {
+    background-color: var(--green-800) !important;
+    border-color: var(--green-700) !important;
+}
+
+.btn-primary {
+    background-color: var(--green-500);
+    border-color: var(--green-500);
+}
+
+.btn-primary:hover {
+    background-color: var(--green-600);
+    border-color: var(--green-600);
+}
+
+
+
+
+
