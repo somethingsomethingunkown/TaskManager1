@@ -32,24 +32,40 @@ body {
 
 :root {
 
-    --green-primary: #198754;
-    --green-100: #d1e7dd;
-    --green-200: #a3cfbb;
-    --green-300: #75b798;
-    --green-400: #479f75;
-    --green-500: #198754; 
-    --green-600: #146c43;
-    --green-700: #0f5132;
-    --green-800: #0a3622;
-    --green-900: #051b11;
+    --red-primary: #dc3545;
+    --red-100: #f8d7da;
+    --red-200: #f1aeb5;
+    --red-300: #ea868f;
+    --red-400: #e25763;
+    --red-500: #dc3545; 
+    --red-600: #b02a37;
+    --red-700: #842029;
+    --red-800: #58151c;
+    --red-900: #2c0b0e;
 }
-body {
-    background-color: black;
+.form-control,
+.form-select {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+    border: 1px solid var(--red-600, #b02a37) !important;
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        background-color: #1a1a1a !important;
+        color: #ffffff !important;
+        border-color: var(--red-400, #e25763) !important;
+        box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+    }
+
+.table-dark {
+    --bs-table-bg: #0b0b15;
+    --bs-table-border-color: var(--red-700, #842029);
 }
 
 .form-label,
 form label:not(.form-check-label) {
-    color: var(--green-200, #d1e7dd);
+    color: var(--red-200, #f1aeb5);
     font-size: 4.2rem;
     font-weight: 500;
     margin-bottom: 0.3rem;
@@ -75,57 +91,57 @@ form label:not(.form-check-label) {
 
 .form-check-label {
     position: static !important;
-    color: var(--green-200, #d1e7dd);
+    color: var(--red-200, #f1aeb5);
     font-size: 4.2rem;
     font-weight: 500;
     cursor: pointer;
     margin-bottom: 0;
 }
 ::placeholder {
-    color: #a0a0a0 !important;
+    color: #b0b0b0 !important;
     opacity: 1;
 }
 header nav.navbar, .navbar {
-    background-color: var(--green-900) !important;
-    border-bottom: 2px solid var(--green-700);
+    background-color: var(--red-900) !important;
+    border-bottom: 2px solid var(--red-700);
 }
 
 
 .navbar-brand, .navbar-nav .nav-link {
-    color: var(--green-600) !important;
+    color: var(--red-600) !important;
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--green-400) !important;
+    color: var(--red-400) !important;
 }
 
 h1, h2, h3, .text-heading {
-    color: var(--green-100);
+    color: var(--red-200);
 }
 
 
 .btn-secondary {
-    background-color: var(--green-700);
-    border-color: var(--green-600);
+    background-color: var(--red-700);
+    border-color: var(--red-600);
     color: white;
 }
 .btn-secondary:hover {
-    background-color: var(--green-800);
-    border-color: var(--green-700);
+    background-color: var(--red-800);
+    border-color: var(--red-700);
  }
 .table-dark {
-    background-color: var(--green-800) !important;
-    border-color: var(--green-700) !important;
+    background-color: var(--red-800) !important;
+    border-color: var(--red-700) !important;
 }
 
 .btn-primary {
-    background-color: var(--green-500);
-    border-color: var(--green-500);
+    background-color: var(--red-500);
+    border-color: var(--red-500);
 }
 
 .btn-primary:hover {
-    background-color: var(--green-600);
-    border-color: var(--green-600);
+    background-color: var(--red-600);
+    border-color: var(--red-600);
 }
 
 

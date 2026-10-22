@@ -17,7 +17,7 @@ namespace TaskManager1.Models
         public string EmployeeAssigned { get; set; }
 
         [Required(ErrorMessage = "Please select a bin.")]
-        [Range(1, 3, ErrorMessage = "Bin must be a selected from the drop down.")]
+        [Range(1, 3, ErrorMessage = "Bin must be selected from the drop down.")]
         public int Bin { get; set; }
 
         public bool Status { get; set; }

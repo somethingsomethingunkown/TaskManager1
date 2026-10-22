@@ -48,7 +48,7 @@ namespace TaskManager1.Controllers
                 _context.SaveChanges();
 
 
-                TempData["SuccessMessage"] = "Your task was saved successfully!";
+                TempData["SuccessMessage"] = "Your task was saved!";
 
 
                 return RedirectToAction("Index");
@@ -72,12 +72,16 @@ namespace TaskManager1.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(TaskModel task)
         {
             if (task != null && ModelState.IsValid)
             {
                 _context.Tasks.Update(task);
                 _context.SaveChanges();
+
+                TempData["SuccessMessage"] = "Your task was updated!";
+
                 return RedirectToAction("Index");
             }
 
@@ -85,10 +89,6 @@ namespace TaskManager1.Controllers
         }
 
   
-        public IActionResult Delete()
-        {
-            return View();
-        }
 
 
         [HttpGet]
@@ -99,6 +99,8 @@ namespace TaskManager1.Controllers
             {
                 _context.Tasks.Remove(task);
                 _context.SaveChanges();
+                TempData["SuccessMessage"] = "Task deleted!";
+
             }
             return RedirectToAction("Index");
         }
