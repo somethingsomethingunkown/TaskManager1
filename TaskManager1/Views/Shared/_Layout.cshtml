@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <link rel="icon" type="image/x-icon" href="\Images\AtlasIcon_20260807010215115.png" />
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Atlas</title>
@@ -18,14 +21,13 @@
         <div class="container-fluid" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
 
 
-            <div style="flex: 1;"></div>
+          
    
-            <ul class="navbar-nav" style="display: flex; gap: 44rem; font-size: 2.4rem; align-items: center; list-style: none; margin: 0; padding: 0; flex: 2;">
+            <ul class="navbar-nav" style="display: flex; gap: 3rem; font-size: 1rem; align-items: center; list-style: none; margin: 0; padding: 0; justify-content: flex-start;">
                 <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                 <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Inventory" asp-action="Index">Inventory</a></li>
                 <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Tasks" asp-action="Index">Task Dashboard</a></li>
             </ul>
-
             <div style="flex: 1; display: flex; justify-content: flex-end;">
                 <partial name="_LoginPartial" />
             </div>
@@ -43,7 +45,7 @@
         <div class="container">
             &copy; 2026 - Atlas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>s
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
