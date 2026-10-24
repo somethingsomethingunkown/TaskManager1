@@ -2,8 +2,8 @@
 @model IEnumerable<TaskModel>
 
 <div class="text-center">
-<ul class="header" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 20.0rem; list-style: none; margin: 0; padding: 0;">
-    <h2 style="margin: 0; font-size: 1.8rem; opacity: 0.85;">Current Tasks</h2>
+<ul class="header" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 4.0rem; list-style: none; margin: 0; padding: 0;">
+    <h2 style="margin: 0; font-size: 3.0rem; opacity: 0.85;">Current Tasks</h2>
 </ul>
 <div style="margin-top: 1rem;">
         <a asp-action="Create" class="btn btn-primary">Create Task</a>
@@ -14,7 +14,7 @@
 
     @if (TempData["SuccessMessage"] != null)
 {
-    <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <div id="success-alert" class="alert alert-success alert-dismissible fade show text-center" role="alert" style="margin-top: 1.5rem;">
         <strong>Success!</strong> @TempData["SuccessMessage"]
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
