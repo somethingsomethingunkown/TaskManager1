@@ -20,8 +20,13 @@ namespace TaskManager1.Controllers
         }
 
 
+        [HttpGet("Home/AccessDenied")]
+        public IActionResult DenyAccess()
+        {
+            ViewData["ErrorMessage"] = "You do not have the required administrative role to access this function.";
+            return View();
+        }
 
-        
 
 
 
