@@ -3,10 +3,12 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.FlowAnalysis;
 using TaskManager1.Data;
 using TaskManager1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace TaskManager1.Controllers
 {
+    [Authorize]
     public class TasksController : Controller
     {
 
@@ -17,6 +19,9 @@ namespace TaskManager1.Controllers
             _context = context;
         }
 
+
+
+        
 
 
 
@@ -60,6 +65,7 @@ namespace TaskManager1.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin,Manager")]
         public IActionResult Edit(int id)
         {
             var task = _context.Tasks.Find(id);
@@ -73,6 +79,7 @@ namespace TaskManager1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Manager")]
         public IActionResult Edit(TaskModel task)
         {
             if (task != null && ModelState.IsValid)
@@ -91,7 +98,10 @@ namespace TaskManager1.Controllers
   
 
 
-        [HttpGet]
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
             var task = _context.Tasks.Find(id);
