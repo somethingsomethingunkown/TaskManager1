@@ -24,6 +24,23 @@
           
    
             <ul class="navbar-nav" style="display: flex; gap: 3rem; font-size: 1rem; align-items: center; list-style: none; margin: 0; padding: 0; justify-content: flex-start;">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <span class="text-muted me-2">@User.Identity.Name</span>
+    
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <span class="badge bg-danger">Administrator</span>
+                    }
+                    else if (User.IsInRole("Manager"))
+                    {
+                        <span class="badge bg-warning text-dark">Manager</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">User</span>
+                    }
+                }
                 <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                 <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Inventory" asp-action="Index">Inventory</a></li>
                 <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Tasks" asp-action="Index">Task Dashboard</a></li>
@@ -37,7 +54,9 @@
 </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+
+
+                    @RenderBody()
         </main>
     </div>
 
