@@ -100,24 +100,30 @@ namespace TaskManager1.Controllers
             return View(task);
         }
 
-  
+
 
 
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
+           
+            if (!User.IsInRole("Admin"))
+            {
+                TempData["ErrorMessage"] = "You do not have permission to delete tasks.";
+                return RedirectToAction(nameof(Index));
+            }
+
             var task = _context.Tasks.Find(id);
             if (task != null)
             {
                 _context.Tasks.Remove(task);
                 _context.SaveChanges();
                 TempData["SuccessMessage"] = "Task deleted!";
-
             }
-            return RedirectToAction("Index");
+
+            return RedirectToAction(nameof(Index));
         }
 
 
